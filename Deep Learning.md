@@ -109,6 +109,7 @@ $$db = \frac{dJ}{dz}\frac{dz}{db} = a-y$$
 
 ### 向量化编程
 并行化计算，加速运算（numpy，如np.dot）
+
 <img src="./pics/logistic_algorithm_np.png" width="30%" height="30%">
 
 ## 正向传播与反向传播
