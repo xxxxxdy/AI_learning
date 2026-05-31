@@ -89,4 +89,28 @@ $$\hat{y}$$
 
 不使用平方差：存在多个局部最小点
 
+### 逻辑回归的梯度下降
+
+sigmoid函数的导数为
+$$\sigma(z)(1-\sigma(z))$$
+,记
+$$\hat{y} = a = \sigma(z)$$
+，则
+
+$$dz = \frac{dJ}{dz} = \frac{dJ}{da} \frac{da}{dz} = (-\frac ya+\frac{1-y}{1-a})*a(1-a)=a-y$$
+
+$$dw_i = \frac{dJ}{dz}\frac{dz}{dw_i} = (a-y)x_i$$
+
+$$db = \frac{dJ}{dz}\frac{dz}{db} = a-y$$
+
+伪代码实现
+<img src="./pics/logistic_algorithm.png" width="50%" height="50%">
+
+### 向量化编程
+并行化计算，加速运算（numpy，如np.dot）
+<img src="./pics/logistic_algorithm_np.png" width="50%" height="50%">
+
+## 正向传播与反向传播
+
+
 
