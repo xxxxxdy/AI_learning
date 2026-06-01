@@ -78,7 +78,7 @@ $$J(w,b)=\frac1m\sum^m_{i=1}L(\hat{y}^{(i)},y^{(i)})$$
 最简单的损失函数定义为平方差损失(线性回归一般使用该损失函数）：
 $$L(\hat{y},y)=\frac12(\hat{y}-y)^2$$
 
-逻辑回归则一般使用
+逻辑回归则一般使用交叉熵损失函数
 $$L(\hat{y},y)=-(y\log{\hat{y}})-(1-y)\log(1-\hat{y})$$
 - y为1时
 $$\hat{y}$$
@@ -112,10 +112,44 @@ $$db = \frac{dJ}{dz}\frac{dz}{db} = a-y$$
 
 <img src="./pics/logistic_algorithm_np.png" width="30%" height="30%">
 
-## 正向传播与反向传播
+### 正向传播与反向传播
 - 正向：从前往后计算梯度与损失
 - 反向：从后往前计算参数的更新梯度值
 
-## Case1：实现一个逻辑回归函数
+### Case1：实现一个逻辑回归函数
 https://github.com/xxxxxdy/AI_learning/blob/main/case/logistic_regression.py
+
+## 浅层神经网络
+单个样本
+
+<img src="./pics/forward_calculate.png" width="30%" height="30%">
+
+多个样本
+
+<img src="./pics/forward_calculate_multi.png" width="30%" height="30%">
+
+### 激活函数的选择
+
+tanh函数（双曲正切函数）：效果比sigmoid好，输出值介于-1到1之间
+
+<img src="./pics/tanh.png" width="30%" height="30%">
+
+和sigmoid共同的缺点：当z值很大或者很小的时候，导数梯度趋于0，更新的程度非常下，训练非常慢
+
+ReLU函数
+
+<img src="./pics/ReLU.png" width="30%" height="30%">
+
+z>0时，梯度为1，收敛速度远快于tanh和sigmoid，z<0时梯度为0，在实际运用中，该缺陷影响不大。
+
+Leaky ReLU (带泄露的ReLU）
+
+<img src="./pics/leaky_ReLU.png" width="30%" height="30%">
+
+实际操作中没证明总是好于ReLU，不常用
+
+#### 非线性的激活函数
+若不适用非线性的激活函数，则输出都是输入的线性组合，与没有隐藏层效果相当，退化为最原始的感知器
+
+
 
