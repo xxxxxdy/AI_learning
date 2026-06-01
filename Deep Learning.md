@@ -117,5 +117,5 @@ $$db = \frac{dJ}{dz}\frac{dz}{db} = a-y$$
 - 反向：从后往前计算参数的更新梯度值
 
 ## Case1：实现一个逻辑回归函数
-
+https://github.com/xxxxxdy/AI_learning/blob/main/case/logistic_regression.py
 
