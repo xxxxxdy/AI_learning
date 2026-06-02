@@ -161,7 +161,7 @@ Leaky ReLU (带泄露的ReLU）
 https://github.com/xxxxxdy/AI_learning/blob/main/case/shallow_nn.py
 
 ## 深层神经网络
-9
+
 <img src="./pics/deep_network.png" width="20%" height="20%">
 
 ### 参数与超参数
@@ -180,3 +180,9 @@ https://github.com/xxxxxdy/AI_learning/blob/main/case/shallow_nn.py
 
 ## 多分类问题
 ### softmax回归
+输出层的神经元个数必须为n，依次对应n个类别的具体概率。
+需要对所有输出的结果进行一下softmax公式计算。
+
+$$a_i^{[L]} = \frac{{e^{Z_i^{[L]}}}_{[L]}}{\sum_{i=1}^C e^{Z_i}}$$
+且满足
+$$\sum_{i=1}^C a_i^{[L]} = 1$$
