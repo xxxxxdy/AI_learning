@@ -132,7 +132,7 @@ https://github.com/xxxxxdy/AI_learning/blob/main/case/logistic_regression.py
 
 tanh函数（双曲正切函数）：效果比sigmoid好，输出值介于-1到1之间
 
-<img src="./pics/tanh.png" width="30%" height="30%">
+<img src="./pics/tanh.png" width="20%" height="20%">
 
 和sigmoid共同的缺点：当z值很大或者很小的时候，导数梯度趋于0，更新的程度非常下，训练非常慢
 
@@ -144,13 +144,13 @@ $$1-tanh^2(x)$$
 
 ReLU函数
 
-<img src="./pics/ReLU.png" width="30%" height="30%">
+<img src="./pics/ReLU.png" width="20%" height="20%">
 
 z>0时，梯度为1，收敛速度远快于tanh和sigmoid，z<0时梯度为0，在实际运用中，该缺陷影响不大。
 
 Leaky ReLU (带泄露的ReLU）
 
-<img src="./pics/leaky_ReLU.png" width="30%" height="30%">
+<img src="./pics/leaky_ReLU.png" width="20%" height="20%">
 
 实际操作中没证明总是好于ReLU，不常用
 
@@ -160,3 +160,20 @@ Leaky ReLU (带泄露的ReLU）
 ### Case2：实现浅层神经网络
 https://github.com/xxxxxdy/AI_learning/blob/main/case/shallow_nn.py
 
+## 深层神经网络
+
+<img src="./pics/deep_network.png" width="20%" height="20%">
+
+### 参数与超参数
+- 参数：网络学习到的值
+- 超参数：根据人经验判断设置的值
+  - 学习率a
+  - 迭代次数N
+  - 隐藏层层数L
+  - 每一层神经元个数n[i]
+  - 激活函数g(z)
+
+#### 参数初始化
+如果初始化的时候将两个隐层神经元的参数设置为相同大小，那么在反向梯度下降计算的时候，会得到同样的梯度大小，经过多次迭代后，其值依然是一样的，对网络的影响是相同的。此时多个隐层神经元就没有意义了。权重W才有这个问题，偏置b不存在该问题可以初始化为0。
+
+一般W初始化的时候值要尽可能的小（趋于0），越小梯度越大收敛越快。
