@@ -122,11 +122,11 @@ https://github.com/xxxxxdy/AI_learning/blob/main/case/logistic_regression.py
 ## 浅层神经网络
 单个样本
 
-<img src="./pics/forward_calculate.png" width="30%" height="30%">
+<img src="./pics/forward_calculate.png" width="50%" height="50%">
 
 多个样本
 
-<img src="./pics/forward_calculate_multi.png" width="30%" height="30%">
+<img src="./pics/forward_calculate_multi.png" width="50%" height="50%">
 
 ### 激活函数的选择
 
@@ -158,4 +158,5 @@ Leaky ReLU (带泄露的ReLU）
 若不适用非线性的激活函数，则输出都是输入的线性组合，与没有隐藏层效果相当，退化为最原始的感知器
 
 ### Case2：实现浅层神经网络
+https://github.com/xxxxxdy/AI_learning/blob/main/case/shallow_nn.py
 
