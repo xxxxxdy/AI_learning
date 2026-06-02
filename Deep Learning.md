@@ -161,7 +161,7 @@ Leaky ReLU (带泄露的ReLU）
 https://github.com/xxxxxdy/AI_learning/blob/main/case/shallow_nn.py
 
 ## 深层神经网络
-
+9
 <img src="./pics/deep_network.png" width="20%" height="20%">
 
 ### 参数与超参数
@@ -177,3 +177,6 @@ https://github.com/xxxxxdy/AI_learning/blob/main/case/shallow_nn.py
 如果初始化的时候将两个隐层神经元的参数设置为相同大小，那么在反向梯度下降计算的时候，会得到同样的梯度大小，经过多次迭代后，其值依然是一样的，对网络的影响是相同的。此时多个隐层神经元就没有意义了。权重W才有这个问题，偏置b不存在该问题可以初始化为0。
 
 一般W初始化的时候值要尽可能的小（趋于0），越小梯度越大收敛越快。
+
+## 多分类问题
+### softmax回归
