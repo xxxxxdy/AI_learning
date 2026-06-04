@@ -186,3 +186,22 @@ https://github.com/xxxxxdy/AI_learning/blob/main/case/shallow_nn.py
 $$a_i^{[L]} = \frac{{e^{Z_i^{[L]}}}_{[L]}}{\sum_{i=1}^C e^{Z_i}}$$
 且满足
 $$\sum_{i=1}^C a_i^{[L]} = 1$$
+
+### 交叉熵损失
+跟二分类类似：
+$$L(\hat{y}, y)=-\sum_{j=1}^Cy_j\log{\hat{y_j}}$$
+
+总损失函数记为
+$$J=\frac1m\sum_{i=1}^mL(\hat{y}, y)$$
+
+### one hot 编码
+
+其方法是使用N位状态寄存器来对N个状态进行编码，每个状态都有它独立的寄存器位，在任意时刻，只有一个值为1。
+
+### Case3:Mnist 手写数字识别神经网络
+
+https://github.com/xxxxxdy/AI_learning/blob/main/case/mnist_mlp.py
+
+
+
+
