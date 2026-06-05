@@ -261,8 +261,8 @@ Root Mean Square Prop算法，在对梯度进行指数加权平均的基础上�
 
 $$s_{dW} = \beta s_{dW^{[l]}}+(1-\beta)(dW)^2$$
 $$s_{db} = \beta s_{db^{[l]}}+(1-\beta)(db)^2$$
-$$W := W-\alpha \frac{dW}{\sqrt{s_{dW+\epsilon}}}$$
-$$b := b-\alpha \frac{db}{\sqrt{s_{db+\epsilon}}}$$
+$$W := W-\alpha \frac{dW}{\sqrt{s_{dW}}+\epsilon}$$
+$$b := b-\alpha \frac{db}{\sqrt{s_{db}}+\epsilon}$$
 
 
 
