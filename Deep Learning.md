@@ -162,7 +162,7 @@ https://github.com/xxxxxdy/AI_learning/blob/main/case/shallow_nn.py
 
 ## 深层神经网络
 
-<img src="./pics/deep_network.png" width="50%" height="50%">
+<img src="./pics/deep_network.png" width="70%" height="70%">
 
 ### 参数与超参数
 - 参数：网络学习到的值
@@ -237,8 +237,12 @@ Mini梯度下降：每次同时处理固定大小的数据集
 样本较小时，如低于2000，则使用整个数据集 
 样本较大时，则会使用2的幂次（与计算机信息存储方式相适应），如128，256，512，1024等
 
+#### 指数加权平均
+$$S_1=Y_1$$
+$$S_i=\beta S_{i-1} + (1-\beta)Y_i$$
 
-
+$$\beta$$
+越大，数据越平滑，越滞后，这些系数叫做偏差修正。
 
 
 
