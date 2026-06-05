@@ -252,12 +252,17 @@ $$S_{db^{[l]}} = \beta S_{db^{[l]}}+(1-\beta)db^{[l]}$$
 $$W^{[l]} := W^{[l]}-\alpha S_{dW^{[l]}}$$
 $$b^{[l]} := b^{[l]}-\alpha S_{db^{[l]}}$$
 
+每次更新的梯度值：幅度大，通过累加过去的梯度值来减小波动，从而加速收敛。
+当前后梯度方向一致时，动量梯度下降能加速学习，不一致时，动量梯度下降能抑制震荡。
 
+#### RMSProp 算法
 
+Root Mean Square Prop算法，在对梯度进行指数加权平均的基础上，引入平方和平方根
 
-
-
-
+$$s_{dW} = \beta s_{dW^{[l]}}+(1-\beta)(dW)^2$$
+$$s_{db} = \beta s_{db^{[l]}}+(1-\beta)(db)^2$$
+$$W := W-\alpha \frac{dW}{\sqrt{s_{dW+\epsilon}}}$$
+$$b := b-\alpha \frac{db}{\sqrt{s_{db+\epsilon}}}$$
 
 
 
