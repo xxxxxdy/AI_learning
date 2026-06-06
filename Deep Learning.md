@@ -245,6 +245,7 @@ $$\beta$$
 越大，数据越平滑，越滞后，这些系数叫做偏差修正。
 
 #### 动量梯度下降法
+gradient descent with momentum：
 计算梯度的指数加权平均值，并利用该值来更新参数值。
 
 $$S_{dW^{[l]}} = \beta S_{dW^{[l]}}+(1-\beta)dW^{[l]}$$
@@ -259,11 +260,27 @@ $$b^{[l]} := b^{[l]}-\alpha S_{db^{[l]}}$$
 
 Root Mean Square Prop算法，在对梯度进行指数加权平均的基础上，引入平方和平方根
 
-$$s_{dW} = \beta s_{dW^{[l]}}+(1-\beta)(dW)^2$$
-$$s_{db} = \beta s_{db^{[l]}}+(1-\beta)(db)^2$$
-$$W := W-\alpha \frac{dW}{\sqrt{s_{dW}}+\epsilon}$$
-$$b := b-\alpha \frac{db}{\sqrt{s_{db}}+\epsilon}$$
+$$s_{dW} = \beta s_{dW}+(1-\beta)(dW)^2$$
+$$s_{db} = \beta s_{db}+(1-\beta)(db)^2$$
+$$W := W-\alpha \frac{dW}{\sqrt{s_{dW}+\epsilon}}$$
+$$b := b-\alpha \frac{db}{\sqrt{s_{db}+\epsilon}}$$
+
+其中
+$$\epsilon$$
+是一个非常小的数，防止分母太小变得不稳定。当dw、db较大的时候，
+$$\frac{db}{\sqrt{s_{db}+\epsilon}}$$
+就会变得非常小
 
 
+目的：对摆动限制更大，因此允许使用更大的学习率，从而加快学习速度
 
+#### Adam算法
+Adaptive Moment Estimation 自适应矩估计：结合上面两种方法
+
+$$s_{dW} = \beta_1 v_{dW}+(1-\beta_1)dW$$
+$$s_{db} = \beta_1 s_{db}+(1-\beta_1)db$$
+$$v_{dW^{[l]}}^{corrected} = \frac{v_{dW^{[l]}}}{1-(\beta_1)^t}$$
+$$s_{dW} = \beta_2 s_{dW}+(1-\beta_2)(dW)^2$$
+$$s_{db} = \beta_2 s_{db}+(1-\beta_2)(db)^2$$
+$$s_{dW^{[l]}}^{corrected} = \frac{s_{dW^{[l]}}}{1-(\beta_2)^t}$$
 
