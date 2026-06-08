@@ -277,10 +277,12 @@ $$\frac{db}{\sqrt{s_{db}+\epsilon}}$$
 #### Adam算法
 Adaptive Moment Estimation 自适应矩估计：结合上面两种方法
 
-$$s_{dW} = \beta_1 v_{dW}+(1-\beta_1)dW$$
-$$s_{db} = \beta_1 s_{db}+(1-\beta_1)db$$
+$$v_{dW} = \beta_1 v_{dW}+(1-\beta_1)dW$$
+$$v_{db} = \beta_1 v_{db}+(1-\beta_1)db$$
 $$v_{dW^{[l]}}^{corrected} = \frac{v_{dW^{[l]}}}{1-(\beta_1)^t}$$
 $$s_{dW} = \beta_2 s_{dW}+(1-\beta_2)(dW)^2$$
 $$s_{db} = \beta_2 s_{db}+(1-\beta_2)(db)^2$$
-$$s_{dW^{[l]}}^{corrected} = \frac{s_{dW^{[l]}}}{1-(\beta_2)^t}$$
+$$s_{db^{[l]}}^{corrected} = \frac{s_{db^{[l]}}}{1-(\beta_2)^t}$$
 
+$$ W :=W-\alpha\frac{v_{dW^{[l]}}^{corrected}}{\sqrt{s_{s_{dW^{[l]}}^{corrected}}+\epsilon} $$
+$$ b :=b-\alpha\frac{v_{db^{[l]}}^{corrected}}{\sqrt{s_{s_{dW^{[l]}}^{corrected}}+\epsilon} $$
