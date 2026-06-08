@@ -284,5 +284,5 @@ $$s_{dW} = \beta_2 s_{dW}+(1-\beta_2)(dW)^2$$
 $$s_{db} = \beta_2 s_{db}+(1-\beta_2)(db)^2$$
 $$s_{db^{[l]}}^{corrected} = \frac{s_{db^{[l]}}}{1-(\beta_2)^t}$$
 
-$$ W :=W-\alpha\frac{v_{dW^{[l]}}^{corrected}}{\sqrt{s_{s_{dW^{[l]}}^{corrected}}+\epsilon} $$
-$$ b :=b-\alpha\frac{v_{db^{[l]}}^{corrected}}{\sqrt{s_{s_{dW^{[l]}}^{corrected}}+\epsilon} $$
+$$ W :=W-\alpha\frac{v_{dW^{[l]}}^{corrected}}{\sqrt{s_{dW^{[l]}}^{corrected}}+\epsilon} $$
+$$ b :=b-\alpha\frac{v_{db^{[l]}}^{corrected}}{\sqrt{s_{db^{[l]}}^{corrected}}+\epsilon}$$
