@@ -286,3 +286,33 @@ $$s_{db^{[l]}}^{corrected} = \frac{s_{db^{[l]}}}{1-(\beta_2)^t}$$
 
 $$ W :=W-\alpha\frac{v_{dW^{[l]}}^{corrected}}{\sqrt{s_{dW^{[l]}}^{corrected}}+\epsilon} $$
 $$ b :=b-\alpha\frac{v_{db^{[l]}}^{corrected}}{\sqrt{s_{db^{[l]}}^{corrected}}+\epsilon}$$
+
+Adam允许更大的学习率，其次RMSProp，最后动量
+
+### 学习率衰减
+
+初期
+$$\alpha$$
+更大，加快收敛速度，后期
+$$\alpha$$
+衰减，使得网络更精确
+
+$$\alpha = \frac 1{1+decay_rate\times epoch_num} \times \alpha_0$$
+
+decay_rate为衰减率，epoch_num为将所有训练样本完整过一遍的次数。
+
+指数衰减：
+
+$$\alpha = 0.95 ^{epoch_num} \times \alpha_0$$
+
+### 标准化输入（normalization）
+能够缓解梯度消失或者梯度爆炸。不论从哪个位置开始迭代，都能以相对较少的迭代次数找到全局最优解。
+
+
+
+
+
+
+
+
+
