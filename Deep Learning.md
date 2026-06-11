@@ -297,13 +297,13 @@ $$\alpha$$
 $$\alpha$$
 衰减，使得网络更精确
 
-$$\alpha = \frac 1{1+decay_rate\times epoch_num} \times \alpha_0$$
+$$\alpha = \frac 1{1+decay\_rate\times epoch\_num} \times \alpha_0$$
 
 decay_rate为衰减率，epoch_num为将所有训练样本完整过一遍的次数。
 
 指数衰减：
 
-$$\alpha = 0.95 ^{epoch_num} \times \alpha_0$$
+$$\alpha = 0.95 ^{epoch\_num} \times \alpha_0$$
 
 ### 标准化输入（normalization）
 能够缓解梯度消失或者梯度爆炸。不论从哪个位置开始迭代，都能以相对较少的迭代次数找到全局最优解。
