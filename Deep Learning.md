@@ -375,7 +375,7 @@ $$\lambda$$
 在训练期间随机丢弃部分神经元（keep_prob，通常为0.8)
 
 ### inverted dropout
-<img src="./pics/inverted_dropout.png" width="30%" height="30%">
+<img src="./pics/inverted_dropout.png" width="60%" height="60%">
 达到权重收缩的功能
 
 
