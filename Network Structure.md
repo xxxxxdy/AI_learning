@@ -60,6 +60,82 @@
 - 再连接一个或多个全连接层，进行模型学习
 
 
+<img src="./pics/CNN_pig.png" width="60%" height="60%">
+
+### 经典分类卷积网络结构
+
+<img src="./pics/CNN_history.png" width="60%" height="60%">
+
+#### LeNet-5
+<img src="./pics/LeNet.png" width="60%" height="60%">
+激活层默认不体现，该网络使用的是sigmoid和tanh函数，
+卷积、激活、池化视作一层，即使池化没有参数
+
+2层卷积+2层全连接+1层output
+
+中间的特征大小变化不宜过快
+
+
+#### AlexNet
+
+<img src="./pics/AlexNet.png" width="60%" height="60%">
+
+- 5层卷积+3层全连接
+- 激活函数ReLU
+- 防止过拟合：dropout，数据扩充
+- 批标准化层
+
+计算量大（6000万参数）
+
+### 卷积网络结构优化
+
+AlexNet-MIN-（VGG-GoogleNet）-ResNet
+
+MIN:引入1*1卷积
+
+VGG:网络深度加深 1.4亿参数（大部分参数在全连接层）
+
+GoogleNet：500万参数，更多卷积、更深层次得到更好的结构，引入了Inception模块
+
+#### Inception结构
+
+提出MLP卷积代替传统线性卷积核。传统线性卷积核：采用线性滤波器，然后使用非线性激活
+
+1*1的卷积核：
+- 配合激活函数，将多通道的feature map由多通道的线性组合编程非线性组合，提高特征抽象能力（Multilayer Perceptron， MLP）
+- 实现卷积核通道数的降维和升维，实现参数的减小化
+
+Inception结构：代替人手工确认使用的卷积核大小与是否需要池化层，由网络自己去寻找合适的结构，并节省计算
+
+<img src="./pics/Inception.png" width="60%" height="60%">
+
+使用多种卷积核进行运算合并结果通道数
+
+<img src="./pics/Inception2.png" width="60%" height="60%">
+
+网络缩小后再扩展
+
+#### 卷积网络特征可视化
+
+NA
+
+### 迁移学习
+利用数据、任务或者模型间的相似性，将在旧的领域学习过或训练好的模型，运用到新的领域中
+
+两个任务的输入属于同一性质
+
+迁移学习需要考虑的：
+- 训练数据
+- 训练成本
+
+#### 微调fine tuning
+已经训练好的模型 pre-trained model
+
+修改并通过代码建立自己的模型，加载原模型的参数
+- 若数据较多，freeze模型一部分
+- 若数据较少，freeze全部参数，只训练输出层
+
+## 循环神经网络 RNN
 
 
 
