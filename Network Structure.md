@@ -89,9 +89,9 @@
 
 ### 卷积网络结构优化
 
-AlexNet-MIN-（VGG-GoogleNet）-ResNet
+AlexNet-NIN-（VGG-GoogleNet）-ResNet
 
-MIN:引入1*1卷积
+NIN:引入1*1卷积
 
 VGG:网络深度加深 1.4亿参数（大部分参数在全连接层）
 
