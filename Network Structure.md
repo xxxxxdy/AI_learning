@@ -322,21 +322,34 @@ V(D,G)表示真实图片和生成图片的差异程度
   - 去掉了全连接层
   - D中全部使用Leaky ReLU，G中除了最后的输出层使用tanh其他层都换成ReLU
 
-<img src="./pics/tranCNN.png" width="60%" height="60%">
+<img src="./pics/TranCNN.png" width="60%" height="60%">
 <img src="./pics/GANLoss.png" width="60%" height="60%">
 
 ### case：GAN生成mnist手写数字
+https://github.com/xxxxxdy/AI_learning/tree/main/case/GAN
 
 ## Auto Encoder
 
+自编码器：数据去噪，可视化降维
 
+一种数据的压缩算法，使用神经网络学习数据值编码的无监督方式
 
-### CapsuleNet
+损失：encoder和decoder的误差衡量
 
+- 普通自编码器
+- 多层自编码器
+- 卷积自编码器
+- 正则化自编码器
 
+  
+## CapsuleNet
 
+CNN通过“池化（Pooling）”操作来获得平移不变性。但这个过程会丢失精确的位置和空间关系信息。CNN只看“有什么特征”，而忽略了“这些特征是怎么排列的”。
 
+- 传统神经元：输出一个标量（一个数字），比如“0.9”，代表检测到某个特征的概率。
+- 胶囊（Capsule）：是一组神经元，它输出一个向量（一组数字）。这个向量的长度代表特征存在的概率，而向量的方向则编码了特征的姿态参数，如精确的位置、旋转角度、大小等。
 
+简单来说，如果输入的图像旋转了30度，CNN的输出可能不变（因为它设计为不变性），而胶囊网络的输出向量会相应地旋转30度，但其模长（代表概率的部分）保持不变。这使得它对几何变换有更强的理解能力。
 
 
 
